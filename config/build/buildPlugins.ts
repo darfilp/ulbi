@@ -1,14 +1,14 @@
 import HtmlWebpackPlugin from "html-webpack-plugin"
 import path from "path"
 import webpack from "webpack"
-import { BuildPaths } from "./types/config"
+import { BuildOptions, BuildPaths } from "./types/config"
 
-export const buildPlugins = ({paths}: {paths: BuildPaths}): webpack.WebpackPluginInstance[] => {
+export const buildPlugins = (options: BuildOptions): webpack.WebpackPluginInstance[] => {
     return [
         new webpack.ProgressPlugin(),
         new HtmlWebpackPlugin({
           title: "Output Management",
-          template: paths.html,
+          template: options.paths.html,
         }),
       ]
 }

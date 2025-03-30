@@ -1,4 +1,4 @@
-import path from 'path'
+import {buildWebpackDevServer} from './buildWebpackDevServer'
 import webpack from 'webpack'
 import { buildPlugins } from './buildPlugins'
 import { buildRules } from './buildRules'
@@ -7,12 +7,12 @@ import { BuildOptions } from './types/config'
 
 
 export const buildWebpackConfig = (options: BuildOptions):webpack.Configuration => {
-    const {mode, paths} = options
+    const {mode, paths, isDev} = options
 
     return {
       mode,
       entry: paths.entry,
-      plugins: buildPlugins({paths}),
+      plugins: buildPlugins(options),
       module: {
         rules: buildRules(),
       },
@@ -22,5 +22,7 @@ export const buildWebpackConfig = (options: BuildOptions):webpack.Configuration 
         path: paths.output,
         clean: true,
       },
+      devtool: isDev ? 'inline-source-map' : undefined,
+      devServer: isDev ? buildWebpackDevServer(options) : undefined
     }
 }
