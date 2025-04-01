@@ -14,7 +14,7 @@ export const buildWebpackConfig = (options: BuildOptions):webpack.Configuration 
       entry: paths.entry,
       plugins: buildPlugins(options),
       module: {
-        rules: buildRules(),
+        rules: buildRules(options),
       },
       resolve: buildResolve(),
       output: {
