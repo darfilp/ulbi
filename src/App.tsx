@@ -8,15 +8,9 @@ import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
 
 import "./styles/index.scss";
 import { useTheme } from "./theme/useTheme";
-import { Theme, ThemeProvider } from "./theme/ThemeProvider";
-import { ThemeContext } from "./theme/ThemeContext";
 
 function App() {
-  const { theme, setTheme } = useContext(ThemeContext);
-
-  const toggleTheme = () => {
-    setTheme(theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
-  };
+  const { theme, toggleTheme } = useTheme();
 
   const router = createBrowserRouter([
     {

@@ -2,7 +2,7 @@ import { createContext } from "react";
 import { Theme } from "./ThemeProvider";
 
 interface ThemeContextProps {
-  theme: string;
+  theme: Theme;
   setTheme: (theme: Theme) => void;
 }
 
