@@ -7,3 +7,5 @@ interface ThemeContextProps {
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({} as any);
+
+export const LOCAL_STORAGE_THEME_KEY = "theme";
