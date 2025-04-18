@@ -1,13 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import s from "./App.m.scss";
 
-import NotFoundPage from "./pages/NotFoundPage";
 import { Suspense } from "react";
-import { MainPageAsync } from "./pages/MainPage/MainPage.async";
-import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
 
 import "./styles/index.scss";
-import { useTheme } from "./theme/useTheme";
+import { useTheme } from "shared/theme/useTheme";
+import { MainPage } from "pages/MainPage";
+import { AboutPage } from "pages/AboutPage";
+import { NotFoundPage } from "pages/NotFoundPage";
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -15,11 +14,11 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <MainPageAsync />,
+      element: <MainPage />,
     },
     {
       path: "/about",
-      element: <AboutPageAsync />,
+      element: <AboutPage />,
     },
     {
       path: "*",

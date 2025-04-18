@@ -1,10 +1,9 @@
 import { useMemo, useState } from "react";
-import { LOCAL_STORAGE_THEME_KEY, ThemeContext } from "./ThemeContext";
-
-export enum Theme {
-  DARK = "dark",
-  LIGHT = "light",
-}
+import {
+  LOCAL_STORAGE_THEME_KEY,
+  Theme,
+  ThemeContext,
+} from "shared/theme/ThemeContext";
 
 interface ThemeProviderProps {
   children: React.ReactNode;
