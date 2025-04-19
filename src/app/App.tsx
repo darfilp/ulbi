@@ -1,30 +1,9 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import { Suspense } from "react";
-
 import "./styles/index.scss";
 import { useTheme } from "shared/theme/useTheme";
-import { MainPage } from "pages/MainPage";
-import { AboutPage } from "pages/AboutPage";
-import { NotFoundPage } from "pages/NotFoundPage";
+import { AppRouter } from "./providers/RouterProvider";
 
 function App() {
   const { theme, toggleTheme } = useTheme();
-
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <MainPage />,
-    },
-    {
-      path: "/about",
-      element: <AboutPage />,
-    },
-    {
-      path: "*",
-      element: <NotFoundPage />,
-    },
-  ]);
 
   return (
     <div className={`app ${theme}`}>
@@ -32,9 +11,7 @@ function App() {
         Переключить тему
       </div>
 
-      <Suspense fallback={<>loading...</>}>
-        <RouterProvider router={router} />
-      </Suspense>
+      <AppRouter />
     </div>
   );
 }
