@@ -1,0 +1,9 @@
+.root {
+  &__primary {
+    color: var(--inverted-primary-color);
+  }
+
+  &__secondary {
+    color: var(--inverted-secondary-color);
+  }
+}

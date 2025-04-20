@@ -7,11 +7,10 @@ function App() {
 
   return (
     <div className={`app ${theme}`}>
-      <div className="" onClick={toggleTheme}>
-        Переключить тему
-      </div>
-
       <AppRouter />
+      {/* <div className="" onClick={toggleTheme}>
+        Переключить тему
+      </div> */}
     </div>
   );
 }

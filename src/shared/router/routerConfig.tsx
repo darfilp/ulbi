@@ -2,6 +2,7 @@ import { RouteObject, RouteProps } from "react-router-dom";
 import { AboutPage } from "pages/AboutPage";
 import { MainPage } from "pages/MainPage";
 import { NotFoundPage } from "pages/NotFoundPage";
+import { Layout } from "widgets/layout";
 
 export const RouteNames = {
   MAIN: "main",
@@ -20,14 +21,20 @@ export const RoutePaths: Record<RouteNamesUnion, string> = {
 export const routeConfig: RouteObject[] = [
   {
     path: RoutePaths[RouteNames.MAIN],
-    element: <MainPage />,
-  },
-  {
-    path: RoutePaths[RouteNames.ABOUT],
-    element: <AboutPage />,
-  },
-  {
-    path: RoutePaths[RouteNames.NOT_FOUND],
-    element: <NotFoundPage />,
+    element: <Layout />,
+    children: [
+      {
+        path: RoutePaths[RouteNames.MAIN],
+        element: <MainPage />,
+      },
+      {
+        path: RoutePaths[RouteNames.ABOUT],
+        element: <AboutPage />,
+      },
+      {
+        path: RoutePaths[RouteNames.NOT_FOUND],
+        element: <NotFoundPage />,
+      },
+    ],
   },
 ];
