@@ -15,7 +15,11 @@ export const ThemeToggle = ({ className }: ThemeToggleProps) => {
 
   return (
     <Button className={clsx(s.root, className)} onClick={toggleTheme}>
-      {theme === Theme.LIGHT ? <DarkMode /> : <LightMode />}
+      {theme === Theme.LIGHT ? (
+        <DarkMode fill="white" />
+      ) : (
+        <LightMode fill="white" />
+      )}
     </Button>
   );
 };
