@@ -5,6 +5,7 @@ export const buildWebpackDevServer = (options: BuildOptions): Configuration => {
   return {
     open: true,
     port: options.port,
+    hot: true,
     historyApiFallback: true, // !Решает проблему при перезагрузке на относительном пути
   };
 };
