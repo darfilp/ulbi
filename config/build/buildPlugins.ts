@@ -16,5 +16,8 @@ export const buildPlugins = (
       title: "Output Management",
       template: options.paths.html,
     }),
+    new webpack.DefinePlugin({
+      __IS_DEV__: options.isDev,
+    }),
   ];
 };

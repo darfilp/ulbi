@@ -1,7 +1,8 @@
 import { useState } from "react";
 import s from "./Sidebar.m.scss";
 import clsx from "clsx";
-import { ThemeToggle } from "widgets/themeToggle";
+import { ThemeToggle } from "widgets/ThemeToggle";
+import { LangSwitcher } from "widgets/LangSwitcher";
 
 interface SidebarProps {}
 
@@ -17,6 +18,7 @@ export const Sidebar = ({}: SidebarProps) => {
       </div>
       <div className={s.switchers}>
         <ThemeToggle />
+        <LangSwitcher />
       </div>
     </div>
   );

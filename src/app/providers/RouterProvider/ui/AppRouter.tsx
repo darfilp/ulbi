@@ -6,7 +6,7 @@ export const AppRouter = () => {
   const router = createBrowserRouter(routeConfig);
 
   return (
-    <Suspense fallback={<>loading...</>}>
+    <Suspense fallback={null}>
       <RouterProvider router={router} />
     </Suspense>
   );
