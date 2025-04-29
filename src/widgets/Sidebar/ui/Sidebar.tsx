@@ -4,9 +4,7 @@ import clsx from "clsx";
 import { ThemeToggle } from "widgets/ThemeToggle";
 import { LangSwitcher } from "widgets/LangSwitcher";
 
-interface SidebarProps {}
-
-export const Sidebar = ({}: SidebarProps) => {
+export const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   const onToggle = () => setCollapsed((prev) => !prev);
