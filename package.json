@@ -3,8 +3,10 @@
     "start": "webpack serve --env port=3333",
     "dev": "webpack --env mode=development",
     "prod": "webpack --env mode=production",
-    "lint": "eslint \"**/*.{ts,tsx}\"",
-    "link:fix": "eslint \"**/*.{ts,tsx}\" --fix"
+    "eslint": "eslint \"**/*.{ts,tsx}\"",
+    "eslink:fix": "eslint \"**/*.{ts,tsx}\" --fix",
+    "stylelint": "stylelint \"**/*.scss\"",
+    "stylelint:fix": "stylelint \"**/*.scss\" --fix"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
@@ -19,6 +21,7 @@
     "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.25.1",
+    "eslint-plugin-i18next": "^6.1.1",
     "eslint-plugin-react": "^7.37.5",
     "file-loader": "^6.2.0",
     "globals": "^16.0.0",
@@ -27,6 +30,8 @@
     "sass": "^1.86.0",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
+    "stylelint": "^16.19.1",
+    "stylelint-config-standard-scss": "^14.0.0",
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2",
@@ -44,5 +49,6 @@
     "react-dom": "^19.1.0",
     "react-i18next": "^15.5.1",
     "react-router-dom": "^7.4.1"
-  }
+  },
+  "type": "module"
 }
