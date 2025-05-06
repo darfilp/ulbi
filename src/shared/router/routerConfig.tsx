@@ -15,7 +15,7 @@ export type RouteNamesUnion = (typeof RouteNames)[keyof typeof RouteNames];
 export const RoutePaths: Record<RouteNamesUnion, string> = {
   [RouteNames.MAIN]: "/",
   [RouteNames.ABOUT]: "/about",
-  [RouteNames.NOT_FOUND]: "/not_found",
+  [RouteNames.NOT_FOUND]: "*",
 };
 
 export const routeConfig: RouteObject[] = [
