@@ -2,6 +2,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
 import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import BundleAnalyzerPlugin from "webpack-bundle-analyzer";
 
 export const buildPlugins = (
   options: BuildOptions
@@ -20,5 +21,8 @@ export const buildPlugins = (
       __IS_DEV__: options.isDev,
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new BundleAnalyzerPlugin.BundleAnalyzerPlugin({
+      openAnalyzer: false,
+    }),
   ];
 };
