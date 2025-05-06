@@ -2,5 +2,7 @@
   "welcome": "Добро пожаловать!",
   "lang": "Русский",
   "loading": "Загрузка",
-  "error": "Ошибка"
+  "error": "Ошибка",
+  "An error occurred in the application": "Возникла ошибка в приложении",
+  "Reload page": "Обновить страницу"
 }

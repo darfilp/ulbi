@@ -2,5 +2,7 @@
   "welcome": "Welcome to our app!",
   "lang": "English",
   "loading": "Loading",
-  "error": "Error"
+  "error": "Error",
+  "An error occurred in the application": "An error occurred in the application",
+  "Reload page": "Reload page"
 }

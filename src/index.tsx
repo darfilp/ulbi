@@ -5,9 +5,13 @@ import { ThemeProvider } from "./app/providers/ThemeProvider";
 const root = createRoot(document.getElementById("root"));
 
 import "./shared/config/i18n/i18n";
+import { ErrorBoundary } from "react-error-boundary";
+import { PageError } from "widgets/PageError";
 
 root.render(
-  <ThemeProvider>
-    <App />
-  </ThemeProvider>
+  <ErrorBoundary fallback={<PageError />}>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </ErrorBoundary>
 );
